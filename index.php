@@ -15,17 +15,25 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Version details.
+ * Inspire tool frontend.
  *
  * @package tool_inspire
- * @copyright  2015 David Monllao {@link http://www.davidmonllao.com}
+ * @copyright 2016 David Monllao {@link http://www.davidmonllao.com}
  * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-defined('MOODLE_INTERNAL') || die();
+require_once(__DIR__ . '/../../../config.php');
+require_once($CFG->libdir . '/adminlib.php');
 
-$plugin->version = 2017050901;
-$plugin->requires = 2017050900;   // Moodle 3.3rc2a
-$plugin->release = 'v3.3-r2';
-$plugin->maturity  = MATURITY_BETA;
-$plugin->component = 'tool_inspire';
+admin_externalpage_setup('inspiremodels', '', null, '', array('pagelayout'=>'report'));
+
+$models = \tool_inspire\manager::get_all_models(1,0,0);
+
+
+echo $OUTPUT->header();
+
+$renderable = new \tool_inspire\output\models_list($models);
+
+echo $PAGE->get_renderer('tool_inspire')->render($renderable);
+
+echo $OUTPUT->footer();
