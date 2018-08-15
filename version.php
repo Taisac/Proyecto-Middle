@@ -17,15 +17,13 @@
 /**
  * Version details.
  *
- * @package tool_inspire
- * @copyright  2015 David Monllao {@link http://www.davidmonllao.com}
- * @license http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package   predict_php
+ * @copyright 2016 David Monllao {@link http://www.davidmonllao.com}
+ * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2017050901;
-$plugin->requires = 2017050900;   // Moodle 3.3rc2a
-$plugin->release = 'v3.3-r2';
-$plugin->maturity  = MATURITY_BETA;
-$plugin->component = 'tool_inspire';
+$plugin->version = 2016052302;
+$plugin->requires = 2016051900;
+$plugin->component = 'predict_php';
