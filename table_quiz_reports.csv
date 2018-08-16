@@ -1,0 +1,5 @@
+id	name	displayorder	capability
+1	grading	6000	mod/quiz:grade
+2	overview	10000	NULL
+3	responses	9000	NULL
+4	statistics	8000	quiz/statistics:view
